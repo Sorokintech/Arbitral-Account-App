@@ -3,16 +3,16 @@ import { accountsData } from "../../../global/mockData.js";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { actions } from "../../../store/slices/cart.slice.js";
+import { useState } from "react";
 
 export const AccountContent = () => {
   const go = (item: object) => {
     console.log(item);
   };
-  const dispatch = useDispatch()
-  const cart = useSelector(state => state)
-  console.log(cart)
+  const dispatch = useDispatch();
+  const cart = useSelector((state) => state);
+  console.log(cart);
   return (
-
     <S.Container>
       <S.Main>
         <S.AccountWrapper>
@@ -29,7 +29,19 @@ export const AccountContent = () => {
               <S.AccountItem>{stock}</S.AccountItem>
               <S.AccountItem>{price}</S.AccountItem>
               <S.AccountItem>
-                <S.AccountBuyBtn onClick={() => dispatch(actions.toggleItemToCart({id, name, stock, price}))}>Добавить в корзину</S.AccountBuyBtn>
+                <S.CartCountIcon src="./icons/remove.png"></S.CartCountIcon>1
+                <S.CartCountIcon src="./icons/add.png"></S.CartCountIcon>
+              </S.AccountItem>
+              <S.AccountItem>
+                <S.AccountBuyBtn
+                  onClick={() =>
+                    dispatch(
+                      actions.toggleItemToCart({ id, name, stock, price })
+                    )
+                  }
+                >
+                  Добавить в корзину
+                </S.AccountBuyBtn>
               </S.AccountItem>
             </S.AccountContainer>
           ))}

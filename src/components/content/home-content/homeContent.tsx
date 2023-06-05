@@ -10,22 +10,22 @@ export const HomeContent = () => {
     <S.Container>
       <S.Main>
         <S.HomeWrapper>
-        <h1>ДОБРО ПОЖАЛОВАТЬ В LOGO </h1>
-        <h2>МАГАЗИН ТОПОВЫХ И КАЧЕСТВЕННЫХ АККАУНТОВ</h2>
-        <h2>КУПИТЬ ФАРМ НЕДОРОГО</h2>
-        <div>
-        <S.Banner>Здесь могла быть Ваша реклама.</S.Banner>
-        <S.Banner>Здесь могла быть Ваша реклама.</S.Banner>
-        <S.Banner>Здесь могла быть Ваша реклама.</S.Banner>
-        </div>
-        <S.HomeMenuHeader> Товары в наличии</S.HomeMenuHeader>
-        <S.ItemContainer>
-        {accounts.map(({ id, name }) => (
-                <S.Item key={id}>
-                  <NavLink to={"/account-page"}>{name}</NavLink>
-                </S.Item>
-                ))}
-        </S.ItemContainer>
+          <h1>ДОБРО ПОЖАЛОВАТЬ В LOGO </h1>
+          <h2>МАГАЗИН ТОПОВЫХ И КАЧЕСТВЕННЫХ АККАУНТОВ</h2>
+          <h2>КУПИТЬ ФАРМ НЕДОРОГО</h2>
+          {/* <div>
+            <S.Banner>Здесь могла быть Ваша реклама.</S.Banner>
+            <S.Banner>Здесь могла быть Ваша реклама.</S.Banner>
+            <S.Banner>Здесь могла быть Ваша реклама.</S.Banner>
+          </div> */}
+          <S.HomeMenuHeader> Аккаунты в наличии</S.HomeMenuHeader>
+          <S.ItemContainer>
+            {accounts.map(({ id, name }) => (
+              <S.Item key={id}>
+                <NavLink to={"/account-page"}>{name}</NavLink>
+              </S.Item>
+            ))}
+          </S.ItemContainer>
         </S.HomeWrapper>
       </S.Main>
     </S.Container>

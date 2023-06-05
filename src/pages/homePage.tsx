@@ -1,4 +1,5 @@
 import { HomeContent } from "../components/content/home-content/homeContent";
+import { Footer } from "../components/footer/footer";
 import { SideBar } from "../components/side-bar/sideBar";
 import * as S from "./style";
 
@@ -7,6 +8,7 @@ export const HomePage = () => {
     <S.Container>
       <SideBar />
       <HomeContent />
+      <Footer />
     </S.Container>
   );
 };

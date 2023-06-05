@@ -64,8 +64,8 @@ export const LoginBtn = styled.button`
   transition: 0.25s;
   :hover {
     transform: scale(1.05);
-    color: #99ccff;
-    border: 1px solid #99ccff;
+    color: #79d279;
+    border: 1px solid #79d279;
   }
 `;
 export const RegisterBtn = styled.button`
@@ -79,7 +79,7 @@ export const RegisterBtn = styled.button`
   transition: 0.25s;
   :hover {
     transform: scale(1.05);
-    color: #99ccff;
-    border: 1px solid #99ccff;
+    color: #79d279;
+    border: 1px solid #79d279;
   }
 `;

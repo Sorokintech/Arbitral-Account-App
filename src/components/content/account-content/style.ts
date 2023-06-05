@@ -3,14 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   padding-top: 40px;
+  margin-bottom: 70px;
 `;
 
 export const Main = styled.div`
   background-color: #fff;
   /* opacity: 0.5; */
-  width: 1250px;
+  width: 1150px;
   height: fit-content;
   border-radius: 5px;
 `;
@@ -18,8 +18,7 @@ export const AccountWrapper = styled.div`
   display: grid;
   padding: 50px 10px 10px 10px;
 `;
-export const AccountHeader = styled.h3`
-`
+export const AccountHeader = styled.h3``;
 export const AccountTitleContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -39,7 +38,7 @@ export const AccountTitleItem = styled.div`
   box-sizing: border-box;
 
   :nth-child(1) {
-    grid-column: span 4;
+    grid-column: span 3;
     justify-content: center;
   }
   :nth-child(2) {
@@ -51,7 +50,7 @@ export const AccountTitleItem = styled.div`
     justify-content: center;
   }
   :nth-child(4) {
-    grid-column: span 1;
+    grid-column: span 2;
     justify-content: center;
   }
 `;
@@ -61,14 +60,15 @@ export const AccountContainer = styled.div`
   align-items: center;
 `;
 export const AccountItem = styled.div`
-  display: grid;
+  /* display: grid; */
+  display: flex;
   border: 1px solid #b3b3b3;
   padding-top: 5px;
   padding-bottom: 5px;
   width: 100%;
   box-sizing: border-box;
   :nth-child(1) {
-    grid-column: span 4;
+    grid-column: span 3;
     justify-self: start;
     padding-left: 10px;
   }
@@ -81,6 +81,10 @@ export const AccountItem = styled.div`
     justify-content: center;
   }
   :nth-child(4) {
+    grid-column: span 1;
+    justify-content: center;
+  }
+  :nth-child(5) {
     grid-column: span 1;
     justify-content: center;
     appearance: none;
@@ -110,7 +114,8 @@ export const AccountItem = styled.div`
     :before {
       animation: opacityFallbackOut 0.5s step-end forwards;
       backface-visibility: hidden;
-      background-color: #99ccff;
+      /* background-color: #99ccff; */
+      background-color: #79d279;
       clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
       content: "";
       height: 100%;
@@ -140,4 +145,16 @@ export const AccountBuyBtn = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
+`;
+export const CartCountIcon = styled.img`
+  margin: 0 10px;
+  cursor: pointer;
+  :nth-child(1) {
+    width: 20px;
+    height: 20px;
+  }
+  :nth-child(2) {
+    width: 20px;
+    height: 20px;
+  }
 `;
