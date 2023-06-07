@@ -64,8 +64,42 @@ export const LoginBtn = styled.button`
   transition: 0.25s;
   :hover {
     transform: scale(1.05);
-    color: #79d279;
-    border: 1px solid #79d279;
+    color: #4ba7bc;
+    border: 1px solid #4ba7bc;
+  }
+`;
+export const LoginLabel = styled.label``;
+export const LoginUser = styled.input`
+  width: 100%;
+  padding: 5px 0;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+  :focus {
+    border: 1px solid #4ba7bc;
+  }
+`;
+export const LoginPassword = styled.input`
+  width: 100%;
+  padding: 5px 0;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+  :focus {
+    border: 1px solid #4ba7bc;
+  }
+`;
+export const LoginPasswordRepeat = styled.input`
+  width: 100%;
+  padding: 5px 0;
+  border: 1px solid #000;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-align: center;
+  :focus {
+    border: 1px solid #4ba7bc;
   }
 `;
 export const RegisterBtn = styled.button`
@@ -79,7 +113,7 @@ export const RegisterBtn = styled.button`
   transition: 0.25s;
   :hover {
     transform: scale(1.05);
-    color: #79d279;
-    border: 1px solid #79d279;
+    color: #4ba7bc;
+    border: 1px solid #4ba7bc;
   }
 `;

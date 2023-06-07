@@ -17,7 +17,7 @@ export const Container = styled.div`
     rgba(255, 255, 255, 1) 80%,
     rgba(121, 205, 249, 1) 100%
   ); */
-  background-image: url("/back/back17.jpg");
+  background-image: url("/back/back22.jpg");
   background-repeat: none;
   background-size: cover;
   display: flex;

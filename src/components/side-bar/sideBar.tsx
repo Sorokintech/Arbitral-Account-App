@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { RegistrationModal } from "../modals/register-modal";
+import { NavLink, useNavigate } from "react-router-dom";
+import { PortalModal } from "../modals/portal-modal";
 import { accounts, socialLinks } from "../../global/mockData";
 import * as S from "./style";
-import { DropDownMenu } from "./dropdown";
 
 export const SideBar = () => {
-  const [data, setData] = useState(Boolean);
+  const navigate = useNavigate();
+  const [data, setData] = React.useState(Boolean);
+  const [user, setUser] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleModal = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <S.Wrapper>
       <S.TopBar>
@@ -36,9 +41,16 @@ export const SideBar = () => {
           <S.ItemSection>FAQ</S.ItemSection>
         </S.ItemContainer>
         <S.ItemContainer>
-          <S.ItemSection>
-            <NavLink to={"/user-portal"}>Личный Кабинет</NavLink>
+          <S.ItemSection
+            onClick={user ? () => navigate("/user-portal") : toggleModal}
+          >
+            Личный Кабинет
           </S.ItemSection>
+          {isOpen ? <PortalModal onClose={toggleModal} /> : ""}
+          <S.ShoppingCartContainer onClick={() => navigate("/cart")}>
+            <S.ShoppingCartImg src="/icons/cart2.png"></S.ShoppingCartImg>
+            <S.ShoppingCartAmount>1</S.ShoppingCartAmount>
+          </S.ShoppingCartContainer>
         </S.ItemContainer>
       </S.TopBar>
     </S.Wrapper>

@@ -2,7 +2,7 @@ import * as S from "./style.js";
 import { accounts, accountsData } from "../../../global/mockData.js";
 import { NavLink } from "react-router-dom";
 
-export const HomeContent = () => {
+export const HomeContent: React.FC = () => {
   const go = (item: object) => {
     console.log(item);
   };
@@ -28,6 +28,9 @@ export const HomeContent = () => {
           </S.ItemContainer>
         </S.HomeWrapper>
       </S.Main>
+      {/* <S.ShoppingCartContainer>
+        <S.ShoppingCartImg src="/icons/cart2.png"></S.ShoppingCartImg>
+      </S.ShoppingCartContainer> */}
     </S.Container>
   );
 };

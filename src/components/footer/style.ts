@@ -5,6 +5,13 @@ export const Container = styled.div`
   box-sizing: border-box;
   overflow: none;
   background-color: #fff;
+  /* background: rgb(117, 153, 117);
+  background: linear-gradient(
+    270deg,
+    rgba(117, 153, 117, 1) 0%,
+    rgba(218, 218, 190, 1) 10%,
+    rgba(255, 255, 255, 1) 52%
+  ); */
   position: fixed;
   bottom: 0;
 `;

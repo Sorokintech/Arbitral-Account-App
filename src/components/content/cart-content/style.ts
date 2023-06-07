@@ -9,21 +9,32 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   background-color: #fff;
-
-  /* opacity: 0.5; */
   width: 1150px;
+  display: flex;
+  flex-direction: column;
   height: fit-content;
   border-radius: 5px;
-  padding: 30px 0;
 `;
-export const AccountWrapper = styled.div`
+export const CartWrapper = styled.div`
   display: grid;
-  padding: 10px 10px 10px 10px;
+  padding: 20px 10px 10px 10px;
+  > h2,
+  h3,
+  p {
+    padding: 0 10px 20px 20px;
+  }
+  > p {
+    font-size: 18px;
+  }
 `;
-export const AccountHeader = styled.h3`
+export const Title = styled.h3`
   display: flex;
-  justify-content: center;
-  padding-bottom: 10px;
+  justify-content: flex-end;
+`;
+export const Div = styled.div`
+  width: 100px;
+  height: 100px;
+  background-color: red;
 `;
 export const AccountTitleContainer = styled.div`
   display: grid;
@@ -45,7 +56,7 @@ export const AccountTitleItem = styled.div`
   box-sizing: border-box;
 
   :nth-child(1) {
-    grid-column: span 3;
+    grid-column: span 6;
     justify-content: center;
   }
   :nth-child(2) {
@@ -53,11 +64,7 @@ export const AccountTitleItem = styled.div`
     justify-content: center;
   }
   :nth-child(3) {
-    grid-column: span 2;
-    justify-content: center;
-  }
-  :nth-child(4) {
-    grid-column: span 2;
+    grid-column: span 1;
     justify-content: center;
   }
 `;
@@ -75,7 +82,7 @@ export const AccountItem = styled.div`
   width: 100%;
   box-sizing: border-box;
   :nth-child(1) {
-    grid-column: span 3;
+    grid-column: span 6;
     justify-self: start;
     padding-left: 10px;
   }
@@ -84,43 +91,33 @@ export const AccountItem = styled.div`
     justify-content: center;
   }
   :nth-child(3) {
-    grid-column: span 2;
-    justify-content: center;
-  }
-  :nth-child(4) {
     grid-column: span 1;
     justify-content: center;
   }
-  :nth-child(5) {
-    grid-column: span 1;
-    justify-content: center;
-    appearance: none;
-    background-color: #ffffff;
-    border: 1px solid #b3b3b3;
-    padding: 5px;
-    color: #000000;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-  }
 `;
-export const AccountBuyBtn = styled.button`
-  /* position: relative; */
-  background-color: transparent;
-  outline: none;
-  border: none;
-  cursor: pointer;
+export const PaymentWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  gap: 10px;
+  align-items: center;
 `;
-export const CartCountIcon = styled.img`
-  margin: 0 10px;
+export const PaymentText = styled.div``;
+export const PaymentSum = styled.div``;
+export const PaymentBtn = styled.button`
+  width: 150px;
+  padding: 5px 20px;
   cursor: pointer;
-  :nth-child(1) {
-    width: 20px;
-    height: 20px;
-  }
-  :nth-child(2) {
-    width: 20px;
-    height: 20px;
+  border: 1px solid transparent;
+  transition: 0.25s ease-in-out;
+  border-radius: 4px;
+  background-color: #4ba7bc;
+  color: #fff;
+  :hover {
+    transform: scale(1.05);
+
+    background-color: #79d279;
   }
 `;

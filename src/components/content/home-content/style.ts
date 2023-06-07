@@ -9,6 +9,12 @@ export const Container = styled.div`
 
 export const Main = styled.div`
   background-color: #fff;
+  /* background: rgb(117, 153, 117);
+  background: linear-gradient(
+    270deg,
+    rgba(218, 218, 190, 1) 1%,
+    rgba(255, 255, 255, 1) 65%
+  ); */
   /* opacity: 0.5; */
   width: 1150px;
   height: fit-content;
@@ -54,13 +60,13 @@ export const Item = styled.div`
     color: #000;
     outline: none;
     :hover {
-      color: #79d279;
+      color: #4ba7bc;
     }
   }
   :hover {
     transform: scale(1.01);
     color: #79d279;
-    border: 1px solid #79d279;
+    border: 1px solid #4ba7bc;
   }
 `;
 
@@ -82,5 +88,31 @@ export const Banner = styled.div`
   }
   :nth-child(3) {
     background-color: #d9ffb3;
+  }
+`;
+
+export const ShoppingCartContainer = styled.div`
+  position: absolute;
+  top: 85%;
+  right: 2%;
+  background-color: #fff;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s ease-in-out;
+  :hover {
+    transform: scale(1.2);
+  }
+`;
+export const ShoppingCartImg = styled.img`
+  width: 35px;
+  height: 35px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  :hover {
+    transform: rotate(1turn);
   }
 `;

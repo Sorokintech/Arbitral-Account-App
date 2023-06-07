@@ -3,20 +3,23 @@ import { accountsData } from "../../../global/mockData.js";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { actions } from "../../../store/slices/cart.slice.js";
-import { useState } from "react";
+import { actions as accountActions } from "../../../store/slices/account-category.slice.js";
+import React from "react";
+import { Counter } from "./counter/index";
 
-export const AccountContent = () => {
-  const go = (item: object) => {
-    console.log(item);
-  };
+export const AccountContent: React.FC = () => {
   const dispatch = useDispatch();
-  const cart = useSelector((state) => state);
-  console.log(cart);
+  // const state = useSelector((state : Object) => state.category);
+  const [time, setTime] = React.useState(1);
+  React.useEffect(() => {
+    dispatch(accountActions.setCategory({ ...accountsData }));
+  }, []);
+
   return (
     <S.Container>
       <S.Main>
         <S.AccountWrapper>
-          <S.AccountHeader></S.AccountHeader>
+          <S.AccountHeader>Аккаунты</S.AccountHeader>
           <S.AccountTitleContainer>
             <S.AccountTitleItem>Название продукта</S.AccountTitleItem>
             <S.AccountTitleItem>В наличии</S.AccountTitleItem>
@@ -27,16 +30,15 @@ export const AccountContent = () => {
             <S.AccountContainer key={id}>
               <S.AccountItem>{name}</S.AccountItem>
               <S.AccountItem>{stock}</S.AccountItem>
-              <S.AccountItem>{price}</S.AccountItem>
+              <S.AccountItem>{price} руб / 1 шт.</S.AccountItem>
               <S.AccountItem>
-                <S.CartCountIcon src="./icons/remove.png"></S.CartCountIcon>1
-                <S.CartCountIcon src="./icons/add.png"></S.CartCountIcon>
+                <Counter stock={stock} />
               </S.AccountItem>
               <S.AccountItem>
                 <S.AccountBuyBtn
                   onClick={() =>
                     dispatch(
-                      actions.toggleItemToCart({ id, name, stock, price })
+                      actions.toggleItemToCart({ id, name, price, time })
                     )
                   }
                 >
