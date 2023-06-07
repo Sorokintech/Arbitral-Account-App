@@ -44,7 +44,8 @@ export const AccountTitleContainer = styled.div`
   border-top-right-radius: 5px;
   /* background-color: #ebebe0; */
   /* background-color: #90c2f2; */
-  background-color: #4ba7bc;
+  /* background-color: #4ba7bc; */
+  background-color: #79d279;
   color: #fff;
 `;
 export const AccountTitleItem = styled.div`
@@ -117,7 +118,6 @@ export const PaymentBtn = styled.button`
   color: #fff;
   :hover {
     transform: scale(1.05);
-
     background-color: #79d279;
   }
 `;

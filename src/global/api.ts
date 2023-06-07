@@ -1,4 +1,4 @@
-// const link = "http://192.168.1.10:8000/api/v1/products/";
+// const link = "https://official-joke-api.appspot.com/random_joke";
 // export let data = "";
 
 // export const fetchData = async () => {

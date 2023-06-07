@@ -6,15 +6,27 @@ import { actions } from "../../../store/slices/cart.slice.js";
 import { actions as accountActions } from "../../../store/slices/account-category.slice.js";
 import React from "react";
 import { Counter } from "./counter/index";
+interface StateInt {
+  cart: object[];
+  category: [
+    {
+      id: number;
+      name: string;
+      stock: number;
+      price: number;
+      toAdd: number;
+    }
+  ];
+}
 
 export const AccountContent: React.FC = () => {
   const dispatch = useDispatch();
-  // const state = useSelector((state : Object) => state.category);
   const [time, setTime] = React.useState(1);
-  React.useEffect(() => {
-    dispatch(accountActions.setCategory({ ...accountsData }));
-  }, []);
-
+  let accountCategory = useSelector((state: StateInt) => state["category"]);
+  let cart = useSelector((state: StateInt) => state["cart"]);
+  // console.log("mock", accountsData);
+  // console.log("state", accountCategory);
+  console.log("cart", cart);
   return (
     <S.Container>
       <S.Main>
@@ -26,7 +38,7 @@ export const AccountContent: React.FC = () => {
             <S.AccountTitleItem>Цена</S.AccountTitleItem>
             <S.AccountTitleItem>Купить</S.AccountTitleItem>
           </S.AccountTitleContainer>
-          {accountsData.map(({ id, name, stock, price }) => (
+          {accountCategory.map(({ id, name, stock, price }) => (
             <S.AccountContainer key={id}>
               <S.AccountItem>{name}</S.AccountItem>
               <S.AccountItem>{stock}</S.AccountItem>
