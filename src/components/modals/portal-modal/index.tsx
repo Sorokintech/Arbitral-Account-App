@@ -1,14 +1,8 @@
-import React from "react";
 import * as S from "./style";
-import { useNavigate } from "react-router-dom";
-
-interface ModalProps {
-  onClose: () => void;
-}
+import React from "react";
+import { ModalProps } from "../../../global/types";
 
 export const PortalModal: React.FC<ModalProps> = ({ onClose }) => {
-  // const navigate = useNavigate();
-  // Hook to set modal to be able to close on click outside
   const [login, setLogin] = React.useState(false);
   const [reg, setReg] = React.useState(false);
   const overlayRef = React.useRef(null);
@@ -31,10 +25,7 @@ export const PortalModal: React.FC<ModalProps> = ({ onClose }) => {
             {login && (
               <>
                 <S.LoginLabel>
-                  <S.LoginUser
-                    type="text"
-                    placeholder="Имя пользователя"
-                  ></S.LoginUser>
+                  <S.LoginUser type="text" placeholder="E-mail"></S.LoginUser>
                   <S.LoginPassword
                     type="text"
                     placeholder="Пароль"
@@ -53,10 +44,7 @@ export const PortalModal: React.FC<ModalProps> = ({ onClose }) => {
             {reg && (
               <>
                 <S.LoginLabel>
-                  <S.LoginUser
-                    type="text"
-                    placeholder="Имя пользователя"
-                  ></S.LoginUser>
+                  <S.LoginUser type="text" placeholder="E-mail"></S.LoginUser>
                   <S.LoginPassword
                     type="text"
                     placeholder="Пароль"

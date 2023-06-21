@@ -4,14 +4,21 @@ interface accountMenuType {
 }
 interface accountType {
   id: number;
+  country: string;
   name: string;
   stock: number;
   price: string;
+  toAdd: number;
 }
 interface LinksIconsType {
   id: number;
   name: string;
   icon: string;
+}
+interface MenuItemsType {
+  id: number;
+  title: string;
+  nav: string;
 }
 
 export const socialLinks: LinksIconsType[] = [
@@ -70,32 +77,74 @@ export const accounts: accountMenuType[] = [
 export const accountsData: accountType[] = [
   {
     id: 1,
-    name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    country: "portugal",
+    name: "Фарм 10-20 дней PRT ПЗРД+BM",
     stock: 50,
-    price: "300.00",
+    price: "300",
+    toAdd: 1,
   },
   {
     id: 2,
-    name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    country: "usa",
+    name: "Фарм 10-20 дней USA ПЗРД+BM",
     stock: 100,
-    price: "400.00",
+    price: "400",
+    toAdd: 1,
   },
   {
     id: 3,
-    name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    country: "ukraine",
+    name: "Фарм 10-20 дней UKR ПЗРД+BM",
     stock: 23,
-    price: "100.00",
+    price: "100",
+    toAdd: 1,
   },
   {
     id: 4,
-    name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    country: "canada",
+    name: "Фарм 10-20 дней CND ПЗРД+BM",
     stock: 234,
-    price: "50.00",
+    price: "50",
+    toAdd: 1,
   },
   {
     id: 5,
-    name: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+    country: "portugal",
+    name: "Фарм 10-20 дней PRT ПЗРД+BM",
     stock: 10,
-    price: "250.00",
+    price: "250",
+    toAdd: 1,
+  },
+];
+export const MenuItems: MenuItemsType[] = [
+  {
+    id: 1,
+    title: "На главную",
+    nav: "/",
+  },
+  {
+    id: 2,
+    title: "Аккаунты",
+    nav: "/account-page",
+  },
+  {
+    id: 3,
+    title: "Безопасность",
+    nav: "/security",
+  },
+  {
+    id: 4,
+    title: "Политика",
+    nav: "/policy",
+  },
+  {
+    id: 5,
+    title: "Публичная оферта",
+    nav: "/offer",
+  },
+  {
+    id: 6,
+    title: "FAQ",
+    nav: "/faq",
   },
 ];

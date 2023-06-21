@@ -5,15 +5,12 @@ export const Container = styled.div`
   box-sizing: border-box;
   overflow: none;
   background-color: #fff;
-  /* background: rgb(117, 153, 117);
-  background: linear-gradient(
-    270deg,
-    rgba(117, 153, 117, 1) 0%,
-    rgba(218, 218, 190, 1) 10%,
-    rgba(255, 255, 255, 1) 52%
-  ); */
   position: fixed;
   bottom: 0;
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -22,6 +19,13 @@ export const Wrapper = styled.div`
   padding: 10px 60px;
   justify-content: flex-end;
   gap: 50px;
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 30px;
+  }
 `;
 export const Info = styled.div``;
 export const InfoIcon = styled.img``;
@@ -29,10 +33,10 @@ export const InfoItem = styled.div``;
 export const Links = styled.div`
   display: flex;
   gap: 10px;
-  /* padding-top: 10px;
-  padding-left: 15px;
-  padding-right: 20px;
-  padding-bottom: 20px; */
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const Icon = styled.img`
   width: 20px;
@@ -40,5 +44,26 @@ export const Icon = styled.img`
   transition: 0.5s;
   :hover {
     transform: scale(1.1);
+  }
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
+`;
+export const SmileIcon = styled.img`
+  position: absolute;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  :hover {
+    transform: scale(1.1);
+  }
+  @media (max-width: 1200px) {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;

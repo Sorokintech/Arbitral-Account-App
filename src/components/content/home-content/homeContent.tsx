@@ -1,11 +1,11 @@
 import * as S from "./style.js";
 import { accounts, accountsData } from "../../../global/mockData.js";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { StateInterface } from "../../../global/types.js";
 
 export const HomeContent: React.FC = () => {
-  const go = (item: object) => {
-    console.log(item);
-  };
+  const CartLogoCounter = useSelector((state: StateInterface) => state["cart"]);
   return (
     <S.Container>
       <S.Main>
@@ -28,9 +28,12 @@ export const HomeContent: React.FC = () => {
           </S.ItemContainer>
         </S.HomeWrapper>
       </S.Main>
-      {/* <S.ShoppingCartContainer>
-        <S.ShoppingCartImg src="/icons/cart2.png"></S.ShoppingCartImg>
-      </S.ShoppingCartContainer> */}
+      <NavLink to={"/cart"}>
+        <S.ShoppingCartContainer>
+          <S.ShoppingCartImg src="/icons/cart2.png"></S.ShoppingCartImg>
+          <S.ShoppingCartAmount>{CartLogoCounter.length}</S.ShoppingCartAmount>
+        </S.ShoppingCartContainer>
+      </NavLink>
     </S.Container>
   );
 };

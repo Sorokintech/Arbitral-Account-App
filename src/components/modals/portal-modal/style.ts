@@ -8,6 +8,10 @@ export const Container = styled.div`
   right: 0;
   bottom: 0;
   position: fixed;
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const Wrapper = styled.div`
   width: 100vw;
@@ -18,6 +22,10 @@ export const Wrapper = styled.div`
   bottom: 0;
   position: fixed;
   background: rgba(49, 49, 49, 0.8);
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const ModalBlock = styled.div`
   background-color: #fff;
@@ -27,6 +35,12 @@ export const ModalBlock = styled.div`
   top: 30%;
   opacity: 1;
   border-radius: 5px;
+  @media (max-width: 1200px) {
+    left: calc(60% - (500px / 2));
+  }
+  @media (max-width: 768px) {
+    left: calc(60% - (380px / 2));
+  }
 `;
 export const ModalContent = styled.div`
   display: -webkit-box;
@@ -46,11 +60,19 @@ export const ModalContent = styled.div`
   border-radius: 12px;
   position: relative;
   transition: 0.25s;
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const ModalTitle = styled.div`
   padding-bottom: 10px;
   color: #000;
   cursor: default;
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const LoginBtn = styled.button`
   width: 200px;
@@ -67,6 +89,10 @@ export const LoginBtn = styled.button`
     color: #4ba7bc;
     border: 1px solid #4ba7bc;
   }
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const LoginLabel = styled.label``;
 export const LoginUser = styled.input`
@@ -79,6 +105,10 @@ export const LoginUser = styled.input`
   :focus {
     border: 1px solid #4ba7bc;
   }
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const LoginPassword = styled.input`
   width: 100%;
@@ -90,6 +120,10 @@ export const LoginPassword = styled.input`
   :focus {
     border: 1px solid #4ba7bc;
   }
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
+  }
 `;
 export const LoginPasswordRepeat = styled.input`
   width: 100%;
@@ -100,6 +134,10 @@ export const LoginPasswordRepeat = styled.input`
   text-align: center;
   :focus {
     border: 1px solid #4ba7bc;
+  }
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
   }
 `;
 export const RegisterBtn = styled.button`
@@ -115,5 +153,9 @@ export const RegisterBtn = styled.button`
     transform: scale(1.05);
     color: #4ba7bc;
     border: 1px solid #4ba7bc;
+  }
+  @media (max-width: 1200px) {
+  }
+  @media (max-width: 768px) {
   }
 `;

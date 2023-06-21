@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
+import { StateInterface } from "../../../global/types.js";
 import * as S from "./style.js";
 
 export const SecurityContent = () => {
+  const CartLogoCounter = useSelector((state: StateInterface) => state["cart"]);
   return (
     <S.Container>
       <S.Main>
@@ -45,6 +48,10 @@ export const SecurityContent = () => {
           </p>
         </S.AccountWrapper>
       </S.Main>
+      <S.ShoppingCartContainer>
+        <S.ShoppingCartImg src="/icons/cart2.png"></S.ShoppingCartImg>
+        <S.ShoppingCartAmount>{CartLogoCounter.length}</S.ShoppingCartAmount>
+      </S.ShoppingCartContainer>
     </S.Container>
   );
 };

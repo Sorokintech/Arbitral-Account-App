@@ -1,31 +1,24 @@
-import { accountsData } from "../../../global/mockData.js";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { actions as CartActions } from "../../../store/slices/cart.slice.js";
-import { Counter } from "../account-content/counter/index.js";
 import * as S from "./style.js";
-interface StateInt {
-  cart: [
-    {
-      id: number;
-      name: string;
-      stock: number;
-      price: number;
-      toAdd: number;
-    }
-  ];
-  category: [
-    {
-      id: number;
-      name: string;
-      stock: number;
-      price: number;
-      toAdd: number;
-    }
-  ];
-}
+import { useDispatch, useSelector } from "react-redux";
+import { actions as CartActions } from "../../../store/slices/cart.slice.js";
+import { actions as accountActions } from "../../../store/slices/account-category.slice.js";
+import { Counter } from "../account-content/counter/index.js";
+import {
+  StateInterface,
+  CartLogicCounterInterface,
+} from "../../../global/types.js";
+
 export const CartContent = () => {
-  let cart = useSelector((state: StateInt) => state["cart"]);
+  let cart = useSelector((state: StateInterface) => state["cart"]);
+  let totalSum: number[] = [];
+  cart.forEach((el) => {
+    totalSum.push(el.price * el.toAdd);
+  });
+  const dispatch = useDispatch();
+  const AddItemToCart = ({ id, v, stock }: CartLogicCounterInterface) => {
+    dispatch(CartActions.setAmount({ counter: v, id }));
+    dispatch(accountActions.setStock({ id, toAdd: v, stock }));
+  };
   return (
     <S.Container>
       <S.Main>
@@ -40,20 +33,37 @@ export const CartContent = () => {
           ) : (
             "К сожалению, пока здесь пусто"
           )}
-          {cart.map(({ id, name, stock, price }) => (
+          {cart.map(({ id, country, name, stock, price, toAdd }) => (
             <S.AccountContainer key={id}>
-              <S.AccountItem>{name}</S.AccountItem>
               <S.AccountItem>
-                <Counter stock={stock} />
+                <S.AccountCountryImg src={`/icons/countries/${country}.png`} />
+                {name}
               </S.AccountItem>
-              <S.AccountItem>{price}</S.AccountItem>
+              <S.AccountItem>
+                <Counter
+                  value={toAdd}
+                  max={stock}
+                  onChange={(v) => AddItemToCart({ id, v, stock })}
+                />
+              </S.AccountItem>
+              <S.AccountItem>
+                {price * toAdd}.00 руб.
+                <S.Icon
+                  src="/icons/delete.png"
+                  onClick={() => dispatch(CartActions.removeItem({ id }))}
+                  data-tooltip={"hello"}
+                ></S.Icon>
+              </S.AccountItem>
             </S.AccountContainer>
           ))}
         </S.CartWrapper>
         {cart.length > 0 ? (
           <S.PaymentWrapper>
             <S.PaymentText>Итоговая сумма:</S.PaymentText>
-            <S.PaymentSum>24800.00 руб.</S.PaymentSum>
+            <S.PaymentSum>
+              {totalSum.reduce((a, b) => +a + +b)}.00 руб.
+            </S.PaymentSum>
+
             <S.PaymentBtn>Оформить заказ</S.PaymentBtn>
           </S.PaymentWrapper>
         ) : (

@@ -1,42 +1,37 @@
-import React, {
-  ChangeEvent,
-  FocusEvent,
-  MouseEvent,
-  MouseEventHandler,
-  useEffect,
-} from "react";
 import * as S from "./style";
+import React, { ChangeEvent, FocusEvent } from "react";
+import { CounterProps } from "../../../../global/types.js";
 
-interface CounterProps {
-  stock: number;
-}
-export const Counter: React.FC<CounterProps> = ({ stock }) => {
-  const [counter, setCounter] = React.useState(1);
+export const Counter: React.FC<CounterProps> = ({
+  onChange,
+  min = 1,
+  max = Infinity,
+  value,
+}) => {
+  const changeHandler = (v: number) => {
+    onChange(Math.min(max, Math.max(min, v)));
+  };
   return (
     <S.Container>
       <S.CartCountIcon
         src="./icons/m.png"
-        onClick={() => setCounter((prev) => (prev !== 1 ? prev - 1 : prev))}
+        onClick={() => changeHandler(value - 1)}
       ></S.CartCountIcon>
       <S.CartCountLabel>
         <S.CartCountInput
           type="text"
-          defaultValue={+counter}
-          value={counter}
+          value={Math.min(max, Math.max(min, value))}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setCounter(+event.target.value);
+            changeHandler(+event.target.value);
           }}
           onBlur={(event: FocusEvent<HTMLInputElement>) => {
-            if (counter > stock) {
-              setCounter(stock);
-            }
+            changeHandler(+event.target.value);
           }}
         />
       </S.CartCountLabel>
-
       <S.CartCountIcon
         src="./icons/p.png"
-        onClick={() => setCounter((prev) => (prev >= stock ? stock : prev + 1))}
+        onClick={() => changeHandler(value + 1)}
       ></S.CartCountIcon>
     </S.Container>
   );
