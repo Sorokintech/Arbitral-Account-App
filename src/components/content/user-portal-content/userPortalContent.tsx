@@ -1,4 +1,3 @@
-import { RegistrationModal } from "../../modals/portal-modal/index.js";
 import React, { useState } from "react";
 import * as S from "./style.js";
 
